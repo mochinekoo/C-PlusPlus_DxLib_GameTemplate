@@ -12,7 +12,7 @@ endif()
 project ("C-PlusPlus_DxLib_GameTemplate")
 
 # ソースをこのプロジェクトの実行可能ファイルに追加します。
-add_executable (C-PlusPlus_DxLib_GameTemplate WIN32 "main.cpp" "framework.h")
+add_executable (C-PlusPlus_DxLib_GameTemplate WIN32 "main.cpp" "framework.h" "Manager/SceneManager.h" "Manager/SceneManager.cpp"  "Scene/BaseScene.h" "Scene/RootScene.h" "Scene/RootScene.cpp")
 
 # ライブラリ
 target_include_directories(C-PlusPlus_DxLib_GameTemplate PUBLIC "C:/ProgramData/DxLib_VC/プロジェクトに追加すべきファイル_VC用/")

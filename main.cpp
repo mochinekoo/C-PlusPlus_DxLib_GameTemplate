@@ -1,6 +1,7 @@
 ﻿#include "DxLib.h"
 #include "framework.h"
 #include <assert.h>
+#include "Manager/SceneManager.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ int WinMain(_In_ HINSTANCE hInstance,
             _In_ LPSTR lpCmdLine,
             _In_ int nShowCmd) {
     initDxLib(); //DxLibの初期化
+    SceneManager::InitManager(); //SceneManagerの初期化
 
     while (ProcessMessage() == 0) { //
         ClearDrawScreen();
@@ -29,11 +31,18 @@ int WinMain(_In_ HINSTANCE hInstance,
 }
 
 void UpdateMainLoop() {
-
+    BaseScene* currentScene = SceneManager::GetCurrentScene();
+    if (currentScene != nullptr) {
+        currentScene->Update();
+    }
+    
 }
 
 void DrawMainLoop() {
-
+    BaseScene* currentScene = SceneManager::GetCurrentScene();
+    if (currentScene != nullptr) {
+        currentScene->Draw();
+    }
 }
 
 int initDxLib() {
