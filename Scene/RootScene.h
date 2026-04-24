@@ -1,8 +1,12 @@
 #pragma once
+#include <DxLib.h>
 #include "BaseScene.h"
 
 class RootScene : public BaseScene {
 private:
+	int hShader_;
+	int hImage_;
+	VERTEX2DSHADER Vert[6];
 protected:
 public:
 	RootScene();

@@ -54,6 +54,7 @@ int initDxLib() {
     SetAlwaysRunFlag(true); //ウインドウがアクティブじゃなくても実行
     SetUseZBuffer3D(true); //Zバッファを使用する
     SetWriteZBuffer3D(true); //Zバッファに書き込む
+    SetUseDirect3DVersion(DX_DIRECT3D_9EX); //HLSLを使用するための、DirectX
     if (DxLib_Init() == -1) {
         return -1;
     }
